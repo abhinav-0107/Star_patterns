@@ -4,29 +4,29 @@
 // *   *
 // *****
 
-function hollow_square_pattern(totalRows) {
-    //First Row
+function printFullRow(n) {
     let str = '';
-    for(let col = 1 ; col <= totalRows ; col++){
-        str += '*';
-    }
-    console.log(str);
-
-    str = '*';
-    for(let i = 2 ; i < totalRows ; i++){
-        str += ' ';
-    }
-    str += '*';
-
-    for(let row = 2 ; row < totalRows ; row++){
-        console.log(str);
-    }
-
-    // Last Row
-    for(let i = 1 ; i <= totalRows ; i++){
+    for(let i = 1 ; i <= n ; i++){
         str += '*';
     }
     console.log(str);
 }
 
-hollow_square_pattern(5);
+function printPartialRow(n) {
+    str = '*';
+    for(let i = 2 ; i < n ; i++){
+        str += ' ';
+    }
+    str += '*';
+    console.log(str);
+}
+
+function hollow_square_pattern(n) {
+    printFullRow(n);
+    for (let i = 2; i < n ; i++) {
+        printPartialRow(n);
+    }
+    printFullRow(n);
+}
+
+hollow_square_pattern(6);
